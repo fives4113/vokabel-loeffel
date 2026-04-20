@@ -36,8 +36,14 @@ if errorlevel 1 goto FAIL
 goto CHECK_KEY
 
 :INSTALL_DEPS
+"%PY%" -m ensurepip --upgrade >nul 2>&1
 "%PY%" -m pip install --upgrade pip
-if errorlevel 1 exit /b 1
+if errorlevel 1 (
+    echo.
+    echo ERROR: pip konnte nicht geladen werden. Stelle sicher, dass Python vollstaendig
+    echo installiert ist ^(Haken bei "pip" im python.org-Installer^).
+    exit /b 1
+)
 "%PY%" -m pip install -r requirements.txt
 if errorlevel 1 exit /b 1
 exit /b 0

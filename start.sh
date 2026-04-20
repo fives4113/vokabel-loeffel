@@ -14,6 +14,7 @@ ask() {
 }
 
 install_deps() {
+    "$PY" -m ensurepip --upgrade >/dev/null 2>&1 || true
     "$PY" -m pip install --upgrade pip
     "$PY" -m pip install -r requirements.txt
 }
