@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vokabel Löffel — Russisch-Vokabeln für Anki</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- SVG-Sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-spoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M12 3c3 0 5 2.5 5 5.5s-2 5.5-5 5.5-5-2.5-5-5.5S9 3 12 3Z"/>
+                <path d="M12 14v7"/>
+            </symbol>
+            <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>
+            </symbol>
+            <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+            </symbol>
+            <symbol id="i-library" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M4 4h4v16H4zM10 4h4v16h-4zM16 6l3.5-1 4 15-3.5 1z"/>
+            </symbol>
+            <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </symbol>
+            <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M16.5 9.4 7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/>
+            </symbol>
+            <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+            </symbol>
+            <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+            </symbol>
+            <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </symbol>
+            <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+                <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
+            </symbol>
+            <symbol id="i-win-min" viewBox="0 0 10 10">
+                <rect x="2" y="7" width="6" height="2" fill="white"/>
+            </symbol>
+            <symbol id="i-win-max" viewBox="0 0 10 10">
+                <rect x="1.5" y="1.5" width="7" height="7" fill="none" stroke="white" stroke-width="1"/>
+                <rect x="1.5" y="1.5" width="7" height="2" fill="white"/>
+            </symbol>
+            <symbol id="i-win-close" viewBox="0 0 10 10">
+                <path d="M2 2 L8 8 M8 2 L2 8" stroke="white" stroke-width="1.6" stroke-linecap="square"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div class="xp-window">
+        <div class="xp-titlebar">
+            <div class="title-icon"><svg><use href="#i-spoon"/></svg></div>
+            <div class="title">Vokabel Löffel — Russisch-Vokabeln für Anki</div>
+            <div class="win-btns">
+                <div class="win-btn minimize" title="Minimieren"><svg><use href="#i-win-min"/></svg></div>
+                <div class="win-btn maximize" title="Maximieren"><svg><use href="#i-win-max"/></svg></div>
+                <div class="win-btn close" title="Schließen"><svg><use href="#i-win-close"/></svg></div>
+            </div>
+        </div>
+        <div class="xp-menubar">
+            <span class="menu-item"><u>D</u>atei</span>
+            <span class="menu-item"><u>B</u>earbeiten</span>
+            <span class="menu-item"><u>A</u>nsicht</span>
+            <span class="menu-item"><u>?</u></span>
+        </div>
+        <div class="xp-content">
+        <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="generate" role="tab">
+                <svg><use href="#i-sparkle"/></svg>
+                Generieren
+            </button>
+            <button class="tab" data-tab="extract" role="tab">
+                <svg><use href="#i-upload"/></svg>
+                Aus Dokument
+            </button>
+            <button class="tab" data-tab="library" role="tab">
+                <svg><use href="#i-library"/></svg>
+                Bibliothek
+                <span id="library-count" class="tab-badge">0</span>
+            </button>
+        </div>
+
+        <!-- Generate -->
+        <section id="tab-generate" class="tab-content active panel">
+            <div class="panel-body">
+                <div class="input-group">
+                    <label for="prompt">Was brauchst du?</label>
+                    <textarea id="prompt" rows="3" placeholder="z.B. Die wichtigsten russischen Vokabeln auf A1-Level&#10;oder: Vokabeln zum Thema Essen und Trinken auf B1-Level"></textarea>
+                    <p class="input-hint">Thema &amp; Niveau frei beschreiben. Claude generiert passende Vokabeln mit Beispielsätzen.</p>
+                </div>
+                <div class="input-group">
+                    <label for="count">Anzahl Vokabeln</label>
+                    <div class="count-row">
+                        <input type="range" id="count-range" min="5" max="200" step="5" value="30">
+                        <input type="number" id="count" value="30" min="5" max="500">
+                    </div>
+                </div>
+                <button id="btn-generate" class="btn-primary">
+                    <svg><use href="#i-sparkle"/></svg>
+                    Vokabeln generieren
+                </button>
+            </div>
+        </section>
+
+        <!-- Extract -->
+        <section id="tab-extract" class="tab-content panel">
+            <div class="panel-body">
+                <div class="input-group">
+                    <label for="file-upload">Lehrbuch-Seite oder Arbeitsheft hochladen</label>
+                    <div class="upload-area" id="upload-area">
+                        <svg><use href="#i-upload"/></svg>
+                        <p><strong>Datei hierher ziehen</strong> oder klicken zum Auswählen</p>
+                        <p class="input-hint" style="margin-top:0.35rem">PDF, JPG, PNG, WebP oder TXT</p>
+                        <input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,.txt" hidden>
+                    </div>
+                    <p id="file-name" class="file-name"></p>
+                </div>
+                <button id="btn-extract" class="btn-primary" disabled>
+                    <svg><use href="#i-sparkle"/></svg>
+                    Vokabeln extrahieren
+                </button>
+            </div>
+        </section>
+
+        <!-- Library -->
+        <section id="tab-library" class="tab-content panel">
+            <div class="panel-body">
+                <div class="library-header">
+                    <div>
+                        <h2>Gespeicherte Vokabeln</h2>
+                        <p class="library-hint">Alle exportierten Vokabeln. Wird beim Generieren zur Duplikat-Erkennung genutzt.</p>
+                    </div>
+                    <button id="btn-clear-library" class="btn-danger">
+                        <svg><use href="#i-trash"/></svg>
+                        Bibliothek leeren
+                    </button>
+                </div>
+                <div id="library-empty" class="library-empty hidden">
+                    <svg><use href="#i-inbox"/></svg>
+                    <p>Noch keine Vokabeln exportiert.</p>
+                </div>
+                <div id="library-table-wrapper" class="table-wrapper">
+                    <table id="library-table">
+                        <thead>
+                            <tr>
+                                <th>Russisch</th>
+                                <th>Translit.</th>
+                                <th>Deutsch</th>
+                                <th>Englisch</th>
+                                <th>Wortart</th>
+                                <th>Beispiel (RU)</th>
+                                <th>Beispiel (DE)</th>
+                                <th>Level</th>
+                                <th>Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody id="library-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Claude analysiert… <span id="loading-text">Das kann einen Moment dauern.</span></p>
+        </div>
+
+        <!-- Results -->
+        <section id="results" class="hidden" style="margin-top:10px">
+            <div class="groupbox">
+                <span class="legend">Ergebnis</span>
+                <div class="results-header">
+                    <div class="results-stats">
+                        <span id="stats-total" class="badge"></span>
+                        <span id="stats-dupes" class="badge warn hidden"></span>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="vocab-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all" checked></th>
+                                <th>Russisch</th>
+                                <th>Translit.</th>
+                                <th>Deutsch</th>
+                                <th>Englisch</th>
+                                <th>Wortart</th>
+                                <th>Beispiel (RU)</th>
+                                <th>Beispiel (DE)</th>
+                                <th>Level</th>
+                                <th>Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vocab-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="export-bar">
+                    <button id="btn-export-apkg" class="btn-primary">
+                        <svg><use href="#i-package"/></svg>
+                        Als Anki-Paket (.apkg)
+                    </button>
+                    <button id="btn-export" class="btn-secondary">
+                        <svg><use href="#i-download"/></svg>
+                        Nur TSV (.txt)
+                    </button>
+                    <span id="export-count"></span>
+                </div>
+            </div>
+        </section>
+        </div>
+        <div class="xp-statusbar">
+            <span class="sb-item">Bereit</span>
+            <span class="sb-item">Bibliothek: <strong id="library-count-hero">0</strong></span>
+            <span class="sb-item" style="margin-left:auto">Vokabel Löffel v1.0</span>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

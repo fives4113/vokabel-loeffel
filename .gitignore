@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# User-specific data
+data/vocabulary.db
+uploads/*
+!uploads/.gitkeep
+
+# Build artefacts
+*.apkg
+*.tsv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
