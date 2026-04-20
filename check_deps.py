@@ -38,7 +38,7 @@ def main() -> int:
                 issues.append(f"{name} fehlt")
                 continue
             if req.specifier and not req.specifier.contains(installed, prereleases=True):
-                issues.append(f"{name} {installed} erfüllt nicht {req.specifier}")
+                issues.append(f"{name} {installed} erfuellt nicht {req.specifier}")
         else:
             name = parse_name(line)
             try:
@@ -47,7 +47,7 @@ def main() -> int:
                 issues.append(f"{name} fehlt")
 
     if issues:
-        print("Fehlende oder veraltete Abhängigkeiten:", file=sys.stderr)
+        print("Fehlende oder veraltete Abhaengigkeiten:", file=sys.stderr)
         for i in issues:
             print(f"  - {i}", file=sys.stderr)
         return 1
